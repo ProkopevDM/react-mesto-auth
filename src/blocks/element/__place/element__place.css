@@ -1,0 +1,8 @@
+.element__place {
+	width: 100%;
+	margin: 0;
+	color: black;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

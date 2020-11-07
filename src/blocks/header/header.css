@@ -1,0 +1,14 @@
+.header {
+	max-width: 882px;
+	min-height: 74px;
+	margin: 45px auto 0 auto;
+	border-bottom: 1px solid #545454;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 425px) {
+	.header {
+		margin-top: 28px;
+		min-height: 56px;
+	}
+}

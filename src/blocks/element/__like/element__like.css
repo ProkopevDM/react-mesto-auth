@@ -1,0 +1,7 @@
+.element__like {
+	min-width: 25px;
+	max-width: 67px;
+	margin-left: 3px;
+	text-align: center;
+	overflow: hidden;
+}

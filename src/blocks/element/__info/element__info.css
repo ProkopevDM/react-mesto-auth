@@ -1,0 +1,6 @@
+.element__info {
+	display: flex;
+	align-items: center;
+	padding: 0 15px 0 21px;
+	min-height: 79px;
+}

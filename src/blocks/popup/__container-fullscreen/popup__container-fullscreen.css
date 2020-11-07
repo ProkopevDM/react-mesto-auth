@@ -1,0 +1,8 @@
+.popup__container-fullscreen {
+	position: relative;
+	max-width: 75vw;
+	max-height: 75vh;
+	display: block;
+	background-color: transparent;
+	cursor: default;
+}
