@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function ImagePopup({card, isOpen, onClose}) {
+export default function ImagePopup({isOpen, card, onClose}) {
 	return (
-		<div className={isOpen && card? "popup popup_type_photo-fullscreen popup_opened" : "popup popup_type_photo-fullscreen"}>
+		<div className={isOpen? "popup popup_type_photo-fullscreen popup_opened" : "popup popup_type_photo-fullscreen"}>
 	    <div className="popup__container-fullscreen">
 	      <button type="button" className="popup__button-close" onClick={onClose} />
 	      <img src={card.link} alt={card.name} className="popup__photo-fullscreen" />

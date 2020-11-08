@@ -26,7 +26,6 @@ function App() {
     setEditAvatarPopupOpen(false);
     setEditProfileOpen(false);
     setAddPlacePopupOpen(false);
-    setSelectedCard(false);
     setPhotoPopupOpen(false);
     setDeleteCardPopupOpen(false);
   }

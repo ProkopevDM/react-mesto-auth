@@ -19,9 +19,9 @@ export default function Main({onEditProfile, onAddPlace, onEditAvatar, infoUser,
         <button type="button" className="profile__button-add" onClick={onAddPlace} />
       </section>
       <ul className="elements">
-        {arrayCard.reverse().map((card) => (
-          <Card cardData={card} key={card._id} onCardClick={onCardClick} onCardClickDelete={onCardClickDelete}/>
-          )
+        {
+          arrayCard.map((card) => 
+          (<Card cardData={card} key={card._id} onCardClick={onCardClick} onCardClickDelete={onCardClickDelete} />)
         )}
       </ul>
     </main>
