@@ -20,6 +20,7 @@
 /*Импорты блока element*/
 @import url(./blocks/element/element.css);
 @import url(./blocks/element/__button-delete/element__button-delete.css);
+@import url(./blocks/element/__button-delete/_hidden/element__button-delete_hidden.css);
 @import url(./blocks/element/__photo/element__photo.css);
 @import url(./blocks/element/__info/element__info.css);
 @import url(./blocks/element/__place/element__place.css);
@@ -46,3 +47,6 @@
 @import url(./blocks/popup/__form-button/popup__form-button.css);
 @import url(./blocks/popup/__form-button/_disabled/popup__form-button_disabled.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
+/*Импорты блока spinner*/
+@import url(./blocks/spinner/spinner.css);
+@import url(./blocks/spinner/_hidden/spinner_hidden.css);

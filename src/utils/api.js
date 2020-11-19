@@ -4,7 +4,6 @@ class Api {
 		this._headers = config.headers;
 	}
 
-/*Проверка состояния сервера*/
 	_getStateServer(res) {
 		if (res.ok) {
 			return res.json()
@@ -19,7 +18,6 @@ class Api {
 		]);
 	}
 
-/*Запрос на получение карточек с сервера*/
 	getCardsFromServer() {
 		return fetch(`${this._baseUrl}/cards`, {
 			headers: this._headers,
@@ -28,7 +26,6 @@ class Api {
 		.then((res) => this._getStateServer(res));
 		};
 
-/*Отправить карточку на сервер*/
 	postCardInfo(inputValues) {
 		return fetch(`${this._baseUrl}/cards`, {
 			headers: this._headers,
@@ -46,7 +43,6 @@ class Api {
 		.then((res) => this._getStateServer(res));
 	};
 
-/*Запрос на получение информации о пользователе*/
 	getUserInfo() {
 		return fetch(`${this._baseUrl}/users/me`, {
 			headers: this._headers,
@@ -55,16 +51,15 @@ class Api {
 		.then((res) => this._getStateServer(res));
 	};
 
-	patchUserInfo(userInfo) {
+	patchUserInfo(name, description) {
 		return fetch(`${this._baseUrl}/users/me`, {
 			headers: this._headers,
 			method: 'PATCH',
-			body: JSON.stringify({name: userInfo.name, about: userInfo.job}),
+			body: JSON.stringify({name: name, about: description}),
 		})
 		.then((res) => this._getStateServer(res));
 	};
 
-/*Полученные данные аватарки*/
 	patchAvatarInfo(data) {
 		return fetch(`${this._baseUrl}/users/me/avatar`, {
 			headers: this._headers,
@@ -92,9 +87,9 @@ class Api {
 }
 
 export default new Api({
-		url: 'https://mesto.nomoreparties.co/v1/cohort-16',
-		headers: {
-			authorization: '2898ad1c-4456-4857-a6ce-22f1f08bf45a',
-			'Content-Type': 'application/json'
-		}
+	url: 'https://mesto.nomoreparties.co/v1/cohort-16',
+	headers: {
+		authorization: '2898ad1c-4456-4857-a6ce-22f1f08bf45a',
+		'Content-Type': 'application/json'
+	}
 });
