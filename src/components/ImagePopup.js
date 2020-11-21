@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function ImagePopup({isOpen, card, onClose}) {
+
 	return (
 		<div className={isOpen? "popup popup_type_photo-fullscreen popup_opened" : "popup popup_type_photo-fullscreen"}>
 	    <div className="popup__container-fullscreen">

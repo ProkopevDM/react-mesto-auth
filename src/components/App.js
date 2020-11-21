@@ -8,7 +8,6 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import CardDeletePopup from './CardDeletePopup';
 import Footer from './Footer';
-import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 import Spinner from './Spinner';
 
@@ -41,6 +40,19 @@ function App() {
     setDeleteCardPopupOpen(false);
   }
 
+  //First loading
+  React.useEffect(() => {
+    setSpinner(true);
+    api.getAppInfo()
+    .then((infoFromServer) => {
+      const [userData, cardsData] = infoFromServer;
+      setCurrentUser(userData);
+      setCards(cardsData);
+    })
+    .catch((error) => console.log(error))
+    .finally(() => setSpinner(false));
+  }, []);
+
 //New user data
   function handleUpdateUser(name, description) {
     setSpinner(true);
@@ -70,7 +82,7 @@ function App() {
     setSpinner(true);
     api.postCardInfo(card)
     .then((newCard) => {
-      setCards([...cards, newCard]);
+      setCards([newCard, ...cards]);
       closeAllPopups()
     })
     .catch((error) => console.log(error))
@@ -118,18 +130,40 @@ function App() {
     }
   }
 
-//First loading
+//Close popup
+  const handleEscClose = (evt) => {
+    if (evt.key === 'Escape') {
+      closeAllPopups();
+      document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener("mousedown", handleEscClose);
+    }
+  };
+
+  const handleOverlayClose = (evt) =>{
+    if (evt.target.classList.contains('popup')) {
+      closeAllPopups();
+      document.removeEventListener("mousedown", handleEscClose);
+      document.removeEventListener("keydown", handleEscClose);
+    }
+  };
+
   React.useEffect(() => {
-    setSpinner(true);
-    api.getAppInfo()
-    .then((infoFromServer) => {
-      const [userData, cardsData] = infoFromServer;
-      setCurrentUser(userData);
-      setCards(cardsData);
-    })
-    .catch((error) => console.log(error))
-    .finally(() => setSpinner(false));
-  }, []);
+    if(isEditProfilePopupOpen === true ||
+      isAddPlacePopupOpen === true ||
+      isEditAvatarPopupOpen === true ||
+      isDeleteCardPopupOpen === true ||
+      selectedCardDelete === true ||
+      isPhotoPopupOpen === true) {
+      document.addEventListener("keydown", handleEscClose);
+      document.addEventListener("mousedown", handleOverlayClose);
+    }
+  },
+  [isEditProfilePopupOpen,
+    isAddPlacePopupOpen,
+    isEditAvatarPopupOpen,
+    isDeleteCardPopupOpen,
+    selectedCardDelete,
+    isPhotoPopupOpen]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
