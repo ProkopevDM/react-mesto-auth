@@ -1,0 +1,16 @@
+.form-authorization__link {
+	max-width: 358px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.form-authorization__link:hover {
+	color: rgba(255, 255, 255, .85);
+	transition: background-color .16s linear;
+}

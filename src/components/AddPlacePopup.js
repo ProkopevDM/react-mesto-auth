@@ -1,8 +1,7 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-export default function AddPlacePopup({isOpen, onClose, onCardAdd}) {
-
+export default function AddPlacePopup({ isOpen, onClose, onCardAdd }) {
   const [name, setName] = React.useState('');
   const [link, setLink] = React.useState('');
 
@@ -14,7 +13,7 @@ export default function AddPlacePopup({isOpen, onClose, onCardAdd}) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCardAdd({ name, link })
+    onCardAdd({ name, link });
   };
 
   return (
@@ -24,5 +23,5 @@ export default function AddPlacePopup({isOpen, onClose, onCardAdd}) {
       <input onChange={handleLinkChange} name="link" type="URL" id="url-input" className="popup__input popup__input_type_url" placeholder="Ссылка на картинку" required autoComplete="off" />
       <span id="url-input-error" className="url-input-error" />
     </PopupWithForm>
-    )
+  );
 }

@@ -1,0 +1,17 @@
+.header__auth-status {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	color: #A9A9A9;
+	text-decoration: none;
+}
+
+.header__auth-status:hover {
+	color: rgba(255, 255, 255, .85);
+	transition: background-color .16s linear;
+}

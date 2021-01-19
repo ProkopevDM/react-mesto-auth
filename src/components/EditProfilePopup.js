@@ -2,8 +2,8 @@ import React from 'react';
 import PopupWithForm from './PopupWithForm';
 import { CurrentUserContext } from '../context/CurrentUserContext';
 
-export default function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
-	const currentUser = React.useContext(CurrentUserContext);
+export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
+  const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = React.useState(currentUser.name);
   const [description, setDescription] = React.useState(currentUser.about);
 
@@ -30,5 +30,5 @@ export default function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 		  <input onChange={handleDescriptionChange} value={description || ''} name="job" type="text" id="profession-input" className="popup__input popup__input_field_profession" placeholder="Занятие" minLength="2" maxLength="200" required autoComplete="off" />
 		  <span id="profession-input-error" className="profession-input-error" />
 		</PopupWithForm>
-	)
+  );
 }

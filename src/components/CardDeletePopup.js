@@ -1,8 +1,9 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-export default function CardDeletePopup({isOpen, onClose, selectedCardDelete, onCardDelete}) {
-
+export default function CardDeletePopup({
+  isOpen, onClose, selectedCardDelete, onCardDelete,
+}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onCardDelete(selectedCardDelete);
@@ -14,7 +15,7 @@ export default function CardDeletePopup({isOpen, onClose, selectedCardDelete, on
     	title='Вы уверены?'
     	buttonText='Да'
     	isOpen={isOpen}
-    	onClose={onClose} 
+    	onClose={onClose}
     	onSubmit={handleSubmit}/>
-  )
+  );
 }
