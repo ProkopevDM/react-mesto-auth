@@ -1,4 +1,4 @@
-# [Mesto Russia](https://millioneri.github.io/mesto-react/) 
+# [Mesto Russia](https://millioneri.github.io/react-mesto-auth/) 
 ------ 
 __Mesto Russia__ - Проектная работа для студентов [Яндекс.Практикум](https://praktikum.yandex.ru/) рассчитанная для проверки знаний на пройденые темы.
 ------ 

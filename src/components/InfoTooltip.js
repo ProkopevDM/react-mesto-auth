@@ -1,6 +1,6 @@
 import React from 'react';
-import okAuth from '../images/okAuth.svg';
-import errorAuth from '../images/errorAuth.svg';
+import okAuth from './../images/okAuth.svg';
+import errorAuth from './../images/errorAuth.svg';
 
 export default function InfoTooltip({
   isOpen, infoTooltipStatus, infoTooltipMessage, onClose,
